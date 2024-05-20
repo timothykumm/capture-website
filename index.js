@@ -166,7 +166,7 @@ const internalCaptureWebsite = async (input, options) => {
 
 		if (options.blockAds) {
 			const blocker = await PuppeteerBlocker.fromPrebuiltFull(fetch, {
-				path: 'engine.bin',
+				path: options.configureTempFiles + 'engine.bin',
 				read: fs.readFile,
 				write: fs.writeFile,
 			});
@@ -201,6 +201,7 @@ const internalCaptureWebsiteCore = async (input, options, page, browser) => {
 		_keepAlive: false,
 		isJavaScriptEnabled: true,
 		blockAds: true,
+		configureTempFiles: '',
 		inset: 0,
 		...options,
 	};

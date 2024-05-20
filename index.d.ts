@@ -216,6 +216,13 @@ export type Options = {
 	*/
 	readonly blockAds?: boolean;
 
+/**
+	Specifies where engine.bin gets saved at
+
+	@default './'
+	*/
+	readonly configureTempFiles?: string;
+
 	/**
 	Whether JavaScript on the website should be executed.
 
